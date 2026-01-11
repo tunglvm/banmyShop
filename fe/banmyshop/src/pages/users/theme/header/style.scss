@@ -1,3 +1,18 @@
 .header-top {
-    background-color: red;
+    background-color:gray;
+}
+
+.header-top-right {
+    background-color: grey;
+    display: flex;
+    justify-content: end;
+    ul {
+        display: flex;
+        list-style: none;
+        column-gap: 10px;
+    }
+}
+
+.icon {
+    font-size: 40px;
 }
