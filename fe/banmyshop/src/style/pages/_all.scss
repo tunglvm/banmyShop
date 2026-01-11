@@ -1,0 +1,31 @@
+@use "sass:map";
+@import "theme";
+
+html,body { //reset css
+    margin: 0;
+}
+
+*{
+    font-family: Roboto;
+    padding: 0;
+    margin: 0;
+}
+
+.container { //class
+    max-width: 1170px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    //background: map.get($theme-color, "main");
+}
+
+.row{ // thuộc tính dòng
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6 { //chia cột
+    flex: 0 0 50%;
+    max-width: 50%;
+}
