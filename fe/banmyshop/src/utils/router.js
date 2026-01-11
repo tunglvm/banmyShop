@@ -4,5 +4,6 @@
 export const ROUTER = { //quản lý tất cả đường dẫn (route) ở 1 nơi duy nhất
     USER: {
         HOME: "", //index route (route mặc định)
+        PROFILE: "profile", //eg: 
     }
 }
