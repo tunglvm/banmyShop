@@ -1,18 +1,75 @@
+@use "sass:map";
+@import "style/pages/_theme";
+
 .header-top {
-    background-color:gray;
+    background-color:black;
+}
+
+.header-top-left {
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+    } 
+    .left-text {
+        margin: 0;
+        padding: 0 0 0 0;
+        font-size: 30px;
+        color: map.get($theme-color, "main-yellow");
+    }
 }
 
 .header-top-right {
-    background-color: grey;
+    background-color: black;
+    height: 30px;
     display: flex;
     justify-content: end;
     ul {
         display: flex;
         list-style: none;
         column-gap: 10px;
+
+        .icon {
+            padding-top: 10px;
+            font-size: 30px;
+            color: map.get($theme-color, "main-yellow");
+        }
+ 
+        #shopeeicon{
+            padding-top: 3px;
+            font-size: 40px;
+            color: map.get($theme-color, "main-yellow");
+        }
+
+        a {
+        color: map.get($theme-color, "main-yellow");
+        text-decoration: none;
+        }
+
+        #loginicon {
+            margin-top: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 40px; 
+            font-size: 38px;
+            color: map.get($theme-color, "main-yellow");
+        }
+            
+
+        #text {
+            cursor: pointer;
+            color: map.get($theme-color, "main-yellow");
+            font-size: 30px;
+            margin-top: 8px;       
+        }
+        
     }
 }
 
-.icon {
-    font-size: 40px;
+.line {
+  width: 100%;
+  height: 8px;
+  background-color: map.get($theme-color, "main-red");
+  margin: 20px 0;
 }

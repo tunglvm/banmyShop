@@ -3,22 +3,52 @@ import "./style.scss";
 import { FaFacebookF } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { TbBrandShopee } from "react-icons/tb";
+import { CgProfile } from "react-icons/cg";
 
 const Header = () => {
     return (
         <div className = "header-top">
             <div className="container">
                 <div className="row">
-                    <div className="col-6">Left</div>
+                    <div className="col-6 header-top-left">
+                        <ul>
+                            <li className="left-text">HOTLINE:083864678</li>
+                        </ul>
+                    </div>
                     <div className="col-6 header-top-right">
                         <ul>
-                            <li className="icon"> <FaFacebookF /> </li>
-                            <li className="icon"> <GrInstagram /> </li>
-                            <li className="icon"> <TbBrandShopee /> </li>
+                            <li className="icon">
+                                <a href = "">
+                                    <FaFacebookF />
+                                </a>
+                            </li>
+                            <li className="icon">
+                                <a href = "">
+                                    <GrInstagram />
+                                </a>
+                            </li>
+                            <li id="shopeeicon">
+                                <a href = "">
+                                     <TbBrandShopee />
+                                </a>
+                            </li>
+                            <ul>
+                                <li id="loginicon" >
+                                    <a href = "">
+                                        <CgProfile />
+                                    </a>
+                                </li>
+                                <li id="text">
+                                    <a href = "">
+                                        <span >Login</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </ul>
                     </div>
                 </div>
-            </div>;
+            </div>
+            <div class="line"></div>
         </div>
     );
         
