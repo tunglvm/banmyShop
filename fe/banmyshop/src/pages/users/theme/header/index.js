@@ -11,9 +11,7 @@ const Header = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-6 header-top-left">
-                        <ul>
-                            <li className="left-text">HOTLINE:083864678</li>
-                        </ul>
+                        <span className="left-text">Holine: 0838364678</span>
                     </div>
                     <div className="col-6 header-top-right">
                         <ul>
