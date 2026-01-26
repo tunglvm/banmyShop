@@ -1,0 +1,36 @@
+$DESKTOP: "DESKTOP";
+$MEDIUM_DIVICE: "MEDIUM_DIVICE";
+$TABLET_DIVICE: "TABLET_DIVICE";
+$WIDE_MOBILE: "WIDE_MOBILE";
+$SMALL_DIVICE: "SMALL_DIVICE";
+
+//tạo responsive theo grid bootstrap
+@mixin Responsive($canvas) {
+    @if $canvas == $DESKTOP{
+        //màn hình desktop =>> min độ rộng = 1200pixel
+        @media only screen and (min_withd: 1200px){
+            @content;
+        }
+        
+    } @else if $canvas == $MEDIUM_DIVICE{
+        //màn hình medium =>> độ rộng = 992pixel - 1199pixel
+        @media only screen and (min_withd: 992px) and  (max_width: 1199px){
+            @content;
+        }
+    } @else if $canvas == $TABLET_DIVICE{
+        //màn hình máy tính bảng =>> độ rộng = 768pixel - 991pixel
+        @media only screen and (min_withd: 768px) and  (max_width: 991px){
+            @content;
+        }
+    } @else if $canvas == $WIDE_MIBILE{
+        //màn hình wide mibile =>> max độ rộng = 767pixel
+        @media only screen and  (max_width: 767px){
+            @content;
+        }
+    } @else if $canvas == $SMALL_DIVICE{
+        //màn hình small divice =>> max độ rộng = 575pixel
+        @media only screen and  (max_width: 575px){
+            @content;
+        }
+    }  
+}

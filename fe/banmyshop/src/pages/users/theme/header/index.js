@@ -1,5 +1,5 @@
 import {memo} from "react"; //PureComponent cho Function Component
-import "./style.scss";
+import "./style.scss";  //import các thuộc tích của scss
 import { FaFacebookF } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { TbBrandShopee } from "react-icons/tb";
@@ -7,7 +7,8 @@ import { CgProfile } from "react-icons/cg";
 
 const Header = () => {
     return (
-        <div className = "header-top">
+        <>
+            <div className = "header-top">
             <div className="container">
                 <div className="row">
                     <div className="col-6 header-top-left">
@@ -47,7 +48,16 @@ const Header = () => {
                 </div>
             </div>
             <div class="line"></div>
-        </div>
+            </div>
+            <div className = "container">
+                <div className = "row">
+                    <div className = "col-lg-3">
+                        Logo
+                    </div>
+                </div>
+            </div>
+        </>
+        
     );
         
 };
