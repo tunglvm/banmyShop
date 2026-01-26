@@ -70,3 +70,49 @@
   background-color: map.get($theme-color, "main-red");
   margin: 20px 0 0 0;
 }
+
+.logo{
+    width: 190px;
+    height: 100%;
+}
+
+.header_cart{
+    //width: 80.203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30.61px ;
+    padding-bottom: 30.6px;
+
+    ul{
+        display: flex;
+        margin-left: 20px;
+
+        li{
+            list-style: none;
+            position: relative;
+            margin-right: 20px;
+
+            svg {
+                font-size: 25px;
+                color: map-get($theme-color, "text-color" );
+            }
+
+            span{
+                color: white;
+                background-color: map.get($theme-color, "main-red");
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                line-height: 20px;
+                font-size: 13px;
+                font-weight: 500;
+                left: 18px;
+                top: -9px;
+            }
+        }
+    }
+}

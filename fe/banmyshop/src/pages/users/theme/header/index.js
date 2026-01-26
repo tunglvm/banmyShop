@@ -1,11 +1,60 @@
-import {memo} from "react"; //PureComponent cho Function Component
+import {memo, useState} from "react"; //PureComponent cho Function Component
+import { Link } from "react-router-dom";
+import { formatter } from "/banmyShop/fe/banmyshop/src/utils/formatter";
+import { ROUTER } from "/banmyShop/fe/banmyshop/src/utils/router";
 import "./style.scss";  //import các thuộc tích của scss
+
 import { FaFacebookF } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { TbBrandShopee } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { FaCartShopping } from "react-icons/fa6";
+
+import logo3 from "/banmyShop/fe/banmyshop/src/assets/users/logo3.png";
+
 
 const Header = () => {
+
+    //danh sách menu / menu state
+    //map các đường dẫn để gắn với thẻ Link 
+    const [menu, setMenu] = useState([
+        {
+            name: "Trang chủ",
+            path: ROUTER.USER.HOME,
+        },
+        {
+            name: "Khuyến mãi",
+            path: ROUTER.USER.PRODUCTS,
+        },
+        {
+            name: "Thực đơn",
+            path: "",
+            isShowSubMenu: false,
+            child: [ //chứa các thành phần cho menu phụ drop
+                {
+                name: "Bánh mì",
+                path: ROUTER.USER.PRODUCTS,
+                },
+                {
+                name: "Đồ uống",
+                path: ROUTER.USER.PRODUCTS,
+                },
+                {
+                name: "Món ăn kèm",
+                path: ROUTER.USER.PRODUCTS,
+                },
+            ]
+        },
+        {
+            name: "Bài viết",
+            path: "",
+        },
+        {
+            name: "Liên hệ",
+            path: "",
+        },
+    ]);
+
     return (
         <>
             <div className = "header-top">
@@ -51,8 +100,40 @@ const Header = () => {
             </div>
             <div className = "container">
                 <div className = "row">
-                    <div className = "col-lg-3">
-                        Logo
+                    <div className = "col-xl-3" >
+                        <div >
+                            <img src = {logo3} alt = "banmy" className = "logo"></img>
+                        </div>
+                        
+                    </div >
+                    <div className = "col-xl-6">
+                        <nav className = "header_menu">
+                            <ul>
+                                <li>Trang chủ</li>
+                                <li></li>
+                                <li>
+                                    <Link to = "Thực đơn"></Link>
+                                    <ul>
+                                        <li>Bánh Mì</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className = "col-xl-3">
+                        <div className = "header_cart">
+                            <div className = "header_cart_price">
+                                <span>{formatter(1234456)}</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <Link to = "#">
+                                        <FaCartShopping />
+                                        <span>6</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

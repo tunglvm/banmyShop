@@ -5,6 +5,8 @@ import RouterCustom from './router';
 import './style/style.scss'; //import các thuộc tính SCSS để có thể kế thừa lại 
 
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
