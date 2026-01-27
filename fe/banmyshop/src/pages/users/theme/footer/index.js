@@ -1,5 +1,7 @@
 import {memo, useState} from "react"; //PureComponent cho Function Component
 import { Link } from "react-router-dom"; //Dùng để điều hướng trong SPA (không reload trang)
+import "./style.scss";  //import các thuộc tích của scss
+
 
 import { FaFacebookF } from "react-icons/fa6";
 import { FaSnapchatSquare } from "react-icons/fa";
