@@ -76,13 +76,78 @@
     height: 100%;
 }
 
+.header_menu {
+
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+            //position relative để menu drop down absolute
+            position: relative;
+
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: map.get($theme-color, "main-yellow");
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transition: all, 0.3s;
+                padding-top: 33.1015px;
+                padding-bottom: 33.1015px;
+                display: block;
+            }
+        }
+
+        li:hover .header-menu-drop {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .active a {
+            color: map.get($theme-color, "main-red");
+
+        }
+
+    .header-menu-drop {
+        background-color: map-get($theme-color, "onyx_grey" );
+        display: block;
+        position: absolute;
+        width: 180px;
+        z-index: 9;
+        padding: 5px 0;
+        transition: all, 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        top: 56px;
+
+        li {
+            a {
+                text-transform: capitalize;
+                color: map.get($theme-color, "main-yellow");
+                font-weight: 400;
+                padding: 5px 15px;
+            }
+
+            :hover {
+                color: map.get($theme-color, "main-red");
+            }
+        }
+    }
+     
+    }
+}
+
 .header_cart{
     //width: 80.203px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30.61px ;
-    padding-bottom: 30.6px;
+    padding-top: 27.6px ;
+    padding-bottom: 27.6px;
 
     ul{
         display: flex;
