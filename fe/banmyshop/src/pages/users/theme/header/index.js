@@ -1,5 +1,5 @@
 import {memo, useState} from "react"; //PureComponent cho Function Component
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; //Dùng để điều hướng trong SPA (không reload trang)
 import { formatter } from "/banmyShop/fe/banmyshop/src/utils/formatter";
 import { ROUTER } from "/banmyShop/fe/banmyshop/src/utils/router";
 import "./style.scss";  //import các thuộc tích của scss
@@ -17,7 +17,7 @@ const Header = () => {
 
     //danh sách menu / menu state
     //map các đường dẫn để gắn với thẻ Link 
-    const [menu, setMenu] = useState([
+    const [menus, setMenu] = useState([
         {
             name: "Trang chủ",
             path: ROUTER.USER.HOME,
@@ -108,15 +108,31 @@ const Header = () => {
                     </div >
                     <div className = "col-xl-6">
                         <nav className = "header_menu">
-                            <ul>
-                                <li>Trang chủ</li>
-                                <li></li>
-                                <li>
-                                    <Link to = "Thực đơn"></Link>
-                                    <ul>
-                                        <li>Bánh Mì</li>
-                                    </ul>
-                                </li>
+                            <ul> 
+                                {   // ?. là optional chaining =>> tránh lỗi undefined/null
+                                    menus?.map((menu, menuKey) => (
+                                            <li key={menuKey} className = {menuKey === 0 ? "active" : ""}>
+                                                <Link to = {menu?.path}>
+                                                    {menu?.name}
+                                                </Link>
+                                                {
+                                                    menu.child && (
+                                                        <ul className="header-menu-drop">
+                                                            {
+                                                                menu.child.map((childItem, childKey) => (
+                                                                    <li key={`$(menuKey - $(childKey)`}>
+                                                                        <Link to = {childItem.path}>{childItem.name}</Link>
+                                                                    </li>
+                                                                ))
+                                                            }
+                                                            
+                                                        </ul>
+                                                    )
+                                                }
+                                            </li>
+                                    ))
+                                }
+                                
                             </ul>
                         </nav>
                     </div>
