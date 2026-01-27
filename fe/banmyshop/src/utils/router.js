@@ -5,5 +5,6 @@ export const ROUTER = { //quản lý tất cả đường dẫn (route) ở 1 n�
     USER: {
         HOME: "", //index route (route mặc định)
         PROFILE: "profile", //eg: 
+        PRODUCTS: "product",
     }
 }

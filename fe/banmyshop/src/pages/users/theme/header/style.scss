@@ -1,18 +1,183 @@
+@use "sass:map";
+@import "style/pages/_theme";
+
 .header-top {
-    background-color:gray;
+    background-color:map-get($theme-color, "text-color");
+}
+
+.header-top-left {
+    height: 30px;
+    display: flex;
+    .left-text {
+        margin-left: 40px;
+        margin-top: 10px;
+        font-size: 30px;
+        color: map.get($theme-color, "main-yellow");
+    }
 }
 
 .header-top-right {
-    background-color: grey;
+    background-color: map-get($theme-color, "text-color");
+    height: 30px;
     display: flex;
     justify-content: end;
     ul {
         display: flex;
         list-style: none;
         column-gap: 10px;
+
+        .icon {
+            padding-top: 10px;
+            font-size: 30px;
+            color: map.get($theme-color, "main-yellow");
+        }
+ 
+        #shopeeicon{
+            padding-top: 3px;
+            font-size: 40px;
+            color: map.get($theme-color, "main-yellow");
+        }
+
+        a {
+        color: map.get($theme-color, "main-yellow");
+        text-decoration: none;
+        }
+
+        #loginicon {
+            margin-top: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 40px; 
+            font-size: 38px;
+            color: map.get($theme-color, "main-yellow");
+        }
+            
+
+        #text {
+            cursor: pointer;
+            color: map.get($theme-color, "main-yellow");
+            font-size: 30px;
+            margin-top: 8px;       
+        }
+        
     }
 }
 
-.icon {
-    font-size: 40px;
+.line {
+  width: 100%;
+  height: 8px;
+  background-color: map.get($theme-color, "main-red");
+  margin: 20px 0 0 0;
+}
+
+.logo{
+    width: 190px;
+    height: 100%;
+}
+
+.header_menu {
+
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+            //position relative để menu drop down absolute
+            position: relative;
+
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: map.get($theme-color, "main-yellow");
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transition: all, 0.3s;
+                padding-top: 33.1015px;
+                padding-bottom: 33.1015px;
+                display: block;
+            }
+        }
+
+        li:hover .header-menu-drop {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .active a {
+            color: map.get($theme-color, "main-red");
+
+        }
+
+    .header-menu-drop {
+        background-color: map-get($theme-color, "onyx_grey" );
+        display: block;
+        position: absolute;
+        width: 180px;
+        z-index: 9;
+        padding: 5px 0;
+        transition: all, 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        top: 56px;
+
+        li {
+            a {
+                text-transform: capitalize;
+                color: map.get($theme-color, "main-yellow");
+                font-weight: 400;
+                padding: 5px 15px;
+            }
+
+            :hover {
+                color: map.get($theme-color, "main-red");
+            }
+        }
+    }
+     
+    }
+}
+
+.header_cart{
+    //width: 80.203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 27.6px ;
+    padding-bottom: 27.6px;
+
+    ul{
+        display: flex;
+        margin-left: 20px;
+
+        li{
+            list-style: none;
+            position: relative;
+            margin-right: 20px;
+
+            svg {
+                font-size: 25px;
+                color: map-get($theme-color, "text-color" );
+            }
+
+            span{
+                color: white;
+                background-color: map.get($theme-color, "main-red");
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                line-height: 20px;
+                font-size: 13px;
+                font-weight: 500;
+                left: 18px;
+                top: -9px;
+            }
+        }
+    }
 }

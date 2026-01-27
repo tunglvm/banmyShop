@@ -1,12 +1,13 @@
 @use "sass:map";
 @import "theme";
+@import "responsive";
 
 html,body { //reset css
     margin: 0;
 }
 
 *{
-    font-family: Roboto;
+    font-family: 'Be Vietnam Pro', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -25,7 +26,87 @@ html,body { //reset css
     flex-wrap: wrap;
 }
 
-.col-6 { //chia cột
+.col-6 { //chia cột trên tỉ lệ 12 của boostrap
+    //<flex-grow> <flex-shrink> <flex-basis>;
+    //=>> không giãn thêm, không co lại, kích thước ban đầu = 50% chiều ngang =>> 2 cột mỗi cột chiếm 50%
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+.col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-lg-6 { 
+    flex: 0 0 50%;
+    max-width: 50%;     
+}
+
+.button-summit {
+    font-size: 14px;
+    color: black;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px 20px 17px;
+    background-color: map.get($theme-color, "main-yellow");
+    border: none;
+    height: 100%;
+}
+
+@include Responsive($DESKTOP){
+    .col-xl-3 { 
+        flex: 0 0 25%;
+        max-width: 25%;
+        
+    }
+
+    .col-xl-6 { 
+        flex: 0 0 50%;
+        max-width: 50%;
+        
+    }
+}
+
+@include Responsive($MEDIUM_DIVICE){
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+}
+
+@include Responsive($TABLET_DIVICE){
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+}
+
+@include Responsive($WIDE_MOBILE){
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+}
+
+@include Responsive($SMALL_DIVICE){
+    .col-xs-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
 }
