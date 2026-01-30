@@ -9,11 +9,12 @@ import { GrInstagram } from "react-icons/gr";
 import { TbBrandShopee } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { FaCartShopping } from "react-icons/fa6";
+import { TiThMenuOutline } from "react-icons/ti";
 
 import logo3 from "/banmyShop/fe/banmyshop/src/assets/users/logo3.png";
-
-
 const Header = () => {
+
+    const [isShowCategories ,setShowCategories] = useState(true);
 
     //danh sách menu / menu state
     //map các đường dẫn để gắn với thẻ Link 
@@ -150,6 +151,33 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className = "container">
+                <div className = "row hero_categrories_container">
+                    <div className = "col-lg-3 hero_categrories">
+                        <div className = "hero_categrories_all" onClick={() => setShowCategories(!isShowCategories)}>
+                            <TiThMenuOutline />
+                            Danh sách sản phẩm
+                        </div>
+                        <ul className = {isShowCategories ? "" : "hidden"}>
+                            <li>
+                                <Link to = "">Bánh mì truyền thống</Link>
+                            </li>
+                            <li>
+                                <Link to = "">Bánh mì chay</Link>
+                            </li>
+                            <li>
+                                <Link to = "">Bánh mì đặc biệt</Link>
+                            </li>
+                            <li>
+                                <Link to = "">Đồ uống</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className = "col-lg-9">
+                        Phai
                     </div>
                 </div>
             </div>

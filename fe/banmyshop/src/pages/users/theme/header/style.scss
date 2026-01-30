@@ -181,3 +181,60 @@
         }
     }
 }
+
+
+.hero_categrories{
+    position: relative;
+
+    .hero_categrories_all{
+        background: map.get($theme-color, "main-yellow");
+        padding: 15px 25px 15px 40px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        
+        font-weight: 700;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
+    ul{
+        border: 1px solid black;
+        position: absolute;
+        opacity: 1;
+        width: 99%;
+        background-color: white ;
+        transition: all 0.2s;
+        li{
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                //background-color: transparent;
+                font: 16px;
+                color: map.get($theme-color, "text-color");
+                line-height: 39px;
+                display: block;
+                padding-left: 15px;
+            }
+
+            &:hover {
+                background-color: map.get($theme-color, "onyx-grey");
+
+                a {
+                    color: map.get($theme-color, "main-yellow");
+                }
+            }
+        }
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+
+}
+
+
