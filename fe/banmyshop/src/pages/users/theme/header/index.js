@@ -10,6 +10,7 @@ import { TbBrandShopee } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { FaCartShopping } from "react-icons/fa6";
 import { TiThMenuOutline } from "react-icons/ti";
+import { FaPhone } from "react-icons/fa6";
 
 import logo3 from "/banmyShop/fe/banmyshop/src/assets/users/logo3.png";
 const Header = () => {
@@ -176,8 +177,37 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className = "col-lg-9">
-                        Phai
+                    <div className = "col-lg-9 hero_search_container">
+                        <div className = "here_search">
+                            <div className = "hero_search_form">
+                                <form>
+                                    <input type="text" name=" " value="" placeholder="Bạn muốn ăn gì?"ace></input>
+                                    <button type="summit" className="site_button">Tìm kiếm</button>
+                                </form>
+                            </div>
+                            <div className="hero_search_phone">
+                                <div className="hero_search_phone_icon">
+                                    <FaPhone />
+                                </div>
+                                <div className="hero_search_phone_text">
+                                    <p>0838364678</p>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hero_item">
+                            <div className="hero_text">
+                                <span>Bánh mì tươi</span>
+                                <h2>
+                                    Nguyên liệu sạch<br/>
+                                    Nóng hổi
+                                </h2>
+                                <p>Miễn phí giao hàng</p>
+                                <Link to = "" className="primary_button">
+                                    Mua ngay
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
